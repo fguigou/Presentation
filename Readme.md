@@ -51,18 +51,18 @@ create form Store(
 
 ### FQL_DATA
 
-| ID | LABEL   |COLUMN_NAME |FORM_ID|TYPE_ID|DATA_ORDER|UNIQUE_DATA|NULLABLE |VISIBLE|DATA_ID|FULL_REF|UNIQUE_REF|TOTALLY|MIN|MAX|
-|--  |--       |--          |--     |--     |--        |--         |--       |--     |--     |--      |--        |--     |-- |-- |
-|0   |name     |name        |0      |2      |--        |f(false)   |f(false) |t(true)|--     |--      |--        |--     |-- |-- |
-|1   |age      |age         |0      |1      |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|2   |title    |title       |1      |2      |--        |t(true)    |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|3   |Person   |Person(*)   |1      |0      |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
-|4   |Person   |Person(name)|2      |0      |--        |f(false)   |f(false) |t(true)|0      |f(false)|--        |--     |-- |-- |
-|5   |Person   |Person(age) |2      |0      |--        |f(false)   |f(false) |t(true)|1      |f(false)|--        |--     |-- |-- |
-|6   |salary   |salary      |2      |1      |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|7   |address  |address     |3      |2      |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|8   |Store    |Store(*)    |4      |0      |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
-|9   |Employee |Employee(*) |4      |0      |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
+| ID | LABEL   |COLUMN_NAME |FORM_ID           |TYPE_ID|DATA_ORDER|UNIQUE_DATA|NULLABLE |VISIBLE|DATA_ID|FULL_REF|UNIQUE_REF|TOTALLY|MIN|MAX|
+|--  |--       |--          |--                |--     |--        |--         |--       |--     |--     |--      |--        |--     |-- |-- |
+|0   |name     |name        |0(Person)         |2(text)|--        |f(false)   |f(false) |t(true)|--     |--      |--        |--     |-- |-- |
+|1   |age      |age         |0(Person)         |1(num) |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
+|2   |title    |title       |1(Project)        |2(text)|--        |t(true)    |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
+|3   |Person   |Person(*)   |1(Project)        |0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
+|4   |Person   |Person(name)|2(Employee)       |0(ref) |--        |f(false)   |f(false) |t(true)|0(name)|f(false)|--        |--     |-- |-- |
+|5   |Person   |Person(age) |2(Employee)       |0(ref) |--        |f(false)   |f(false) |t(true)|1(age) |f(false)|--        |--     |-- |-- |
+|6   |salary   |salary      |2(Employee)       |1(num) |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
+|7   |address  |address     |3(Store)          |2(text)|--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
+|8   |Store    |Store(*)    |4(Store_Employees)|0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
+|9   |Employee |Employee(*) |4(Store_Employees)|0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
 
 #### Preguntas:
 - En qué se diferencia LABEL de COLUMN_NAME? Lo que yo creo es que tiene que ver con los campos a los que se referencia
