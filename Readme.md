@@ -21,7 +21,7 @@ create form Employees(
 )
 create form Store(
     address text,
-    Employee references 1..many Employees
+    Employee references 0..many Employees
 )
 ```
 
@@ -56,12 +56,12 @@ create form Store(
 |0   |name     |name        |0(Person)         |2(text)|--        |f(false)   |f(false) |t(true)|--     |--      |--        |--     |-- |-- |
 |1   |age      |age         |0(Person)         |1(num) |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
 |2   |title    |title       |1(Project)        |2(text)|--        |t(true)    |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|3   |Person   |Person(*)   |1(Project)        |0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
-|4   |Person   |Person(name)|2(Employee)       |0(ref) |--        |f(false)   |f(false) |t(true)|0(name)|f(false)|--        |--     |-- |-- |
-|5   |Person   |Person(age) |2(Employee)       |0(ref) |--        |f(false)   |f(false) |t(true)|1(age) |f(false)|--        |--     |-- |-- |
+|3   |Person   |Person(*)   |1(Project)        |0(ref) |--        |t(true)    |f(false) |t(true)|--     |t(true) |--        |--     |-- |-- |
+|4   |Person   |Person(name)|2(Employee)       |0(ref) |--        |t(true)    |f(false) |t(true)|0(name)|f(false)|--        |--     |-- |-- |
+|5   |Person   |Person(age) |2(Employee)       |0(ref) |--        |f(false)   |t(true)  |t(true)|1(age) |f(false)|--        |--     |-- |-- |
 |6   |salary   |salary      |2(Employee)       |1(num) |--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
 |7   |address  |address     |3(Store)          |2(text)|--        |f(false)   |t(true)  |t(true)|--     |--      |--        |--     |-- |-- |
-|8   |Store    |Store(*)    |4(Store_Employees)|0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
+|8   |Store    |Store(*)    |4(Store_Employees)|0(ref) |--        |t(true)    |f(false) |t(true)|--     |t(true) |--        |--     |-- |-- |
 |9   |Employee |Employee(*) |4(Store_Employees)|0(ref) |--        |f(false)   |t(true)  |t(true)|--     |t(true) |--        |--     |-- |-- |
 
 #### Preguntas:
