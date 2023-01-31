@@ -66,11 +66,25 @@ create form Store(
 
 #### Preguntas:
 - En qué se diferencia LABEL de COLUMN_NAME? Lo que yo creo es que tiene que ver con los campos a los que se referencia
+R. El label es lo que el PresentationServer muestra en la UI. El column_name es el nombre de la columna en la tabla. 
+   Esto sirve si en el futuro se hace un import de un esquema de BD ya existente.
+   También sirve para casos donde hay un form Personas y otro Países y ambos tienen un dato "nombre". 
+
 - Cual es el significado de DATA_ORDER? Lo que creo es que representa el orden con el cual se muestran los datos. En caso de que sea así, que instrucción puede variar ese orden?
+R. Tal cual. Por ahora no hay un statement definido, no es una prioridad. 
+
 - Los campos UNIQUE_DATA y UNIQUE_REF son iguales para las referencias?, Creo que el primero tiene que ver con la cardinalidad de la referencia y el segundo con RefConstraint que puede tomar los valores UNIQUE y TOTALLY UNIQUE.
+R. UNIQUE_DATA crea una UNIQUE_KEY con ese (o esos) dato(s). Su ocurrencia no se repite en la tabla.
+   UNIQUE_REF puede tener tres valores. Vacío, no es una referencia única. Y los otros dos indican si es una referencia única para ese caso (por ejemplo, un crítico de arte puede visitar varias obras, pero cada una de ellas una única vez ... aunque la misma obra puede ser visitada por varios críticos). Y en caso de ser TOTALLY UNIQUE, quiere decir que esa referencia es única para todos los casos (por ejemplo, si en el caso anterior, no más de un crítico puede visitar la misma obra de teatro). 
+
 - Cuando un campo no es VISIBLE?, tengo claro que dentro de las referencias si referencio a Person.(name,age), esos campos son visibles Para Employees, pero tengo que agregar los restantes campos de Person(en caso de que existiesen) como no VISIBLE?
+R. No, para nada. Ese era un caso especial, cuando hay referencias sobre referencias y algunos datos intermedios no son visibles. 
+
 - Cuando referencio a todo un formulario el campo DATA_ID se mantiene vacío?
+R. Si.
+
 - Las columnas MIN y MAX tienen que ver con rangos? 
+R. Si. Es el mínimo y máximo número de casos para la referencia. 
 
 ### Person
 | fql_id | name |age |
